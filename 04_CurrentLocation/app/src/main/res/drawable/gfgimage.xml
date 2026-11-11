@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <!-- Location pin outer shape -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,10 C33,10 20,23 20,40 C20,60 50,90 50,90 C50,90 80,60 80,40 C80,23 67,10 50,10 Z"/>
+    <!-- Location pin inner circle (cut-out) -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M50,30 C44,30 40,34 40,40 C40,46 44,50 50,50 C56,50 60,46 60,40 C60,34 56,30 50,30 Z"/>
+</vector>

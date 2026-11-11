@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#ECEFF1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/num1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number 1"
+        android:inputType="numberDecimal|numberSigned"
+        android:onClick="clearTextNum1"
+        android:background="@android:color/white"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/num2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number 2"
+        android:inputType="numberDecimal|numberSigned"
+        android:onClick="clearTextNum2"
+        android:background="@android:color/white"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textSize="22sp"
+        android:padding="8dp"
+        android:background="@android:color/white"
+        android:layout_marginBottom="16dp"
+        android:minHeight="48dp"/>
+
+    <!-- Row 1 of operation buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Button android:id="@+id/sum" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="+" android:onClick="doSum"
+            android:backgroundTint="#E53935" android:textColor="#FFFFFF" android:layout_margin="2dp"/>
+        <Button android:id="@+id/sub" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="-" android:onClick="doSub"
+            android:backgroundTint="#E53935" android:textColor="#FFFFFF" android:layout_margin="2dp"/>
+        <Button android:id="@+id/mul" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="x" android:onClick="doMul"
+            android:backgroundTint="#E53935" android:textColor="#FFFFFF" android:layout_margin="2dp"/>
+        <Button android:id="@+id/div" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="/" android:onClick="doDiv"
+            android:backgroundTint="#E53935" android:textColor="#FFFFFF" android:layout_margin="2dp"/>
+    </LinearLayout>
+
+    <!-- Row 2 of operation buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/button" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="%(mod)" android:onClick="doMod"
+            android:backgroundTint="#E53935" android:textColor="#FFFFFF" android:layout_margin="2dp"/>
+        <Button android:id="@+id/pow" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="wrap_content" android:text="n1^n2" android:onClick="doPow"
+            android:backgroundTint="#E53935" android:textColor="#FFFFFF" android:layout_margin="2dp"/>
+    </LinearLayout>
+</LinearLayout>

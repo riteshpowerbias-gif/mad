@@ -1,0 +1,104 @@
+Here is the step-by-step guide to open, build, run, and view the output for any of the 10 experiments in Android Studio:
+
+Step 1: Copy the Project Folder to Your Machine
+Copy the mad-lab-experiments folder (or individual experiment folders) to your target PC that has Android Studio installed.
+Note: Each experiment folder (e.g. 01_HelloWorld, 06_BMICalculator) is its own independent project.
+Step 2: Open the Experiment in Android Studio
+Launch Android Studio.
+Click Open from the Welcome window (or from the top menu: File → Open...).
+Navigate to and select one specific project folder (e.g. 06_BMICalculator or 03_Calculator).
+
+⚠️ Important: Do not select the root mad-lab-experiments folder; always open the specific experiment subfolder.
+
+Click OK / Open.
+If prompted with "Trust Project?", click Trust Project.
+Step 3: Wait for Gradle Sync
+On opening, Android Studio will automatically start syncing Gradle. Look at the status bar at the bottom (Gradle Sync in progress...).
+On the first run, make sure your PC has an active internet connection:
+Android Studio reads gradle/wrapper/gradle-wrapper.properties and downloads Gradle 8.9 and the required Android SDK build tools/dependencies automatically.
+Once finished, you will see "BUILD SUCCESSFUL" in the Build tab at the bottom.
+
+Tip: If Android Studio warns about JDK version, ensure your Gradle JDK is set to Java 17+:
+Go to File → Settings (or Android Studio → Settings on Mac) → Build, Execution, Deployment → Build Tools → Gradle → set Gradle JDK to Embedded JDK / JDK 17.
+
+Step 4: Set Up an Emulator or Connect a Real Phone
+Option A: Android Virtual Device (Emulator)
+In Android Studio, open the Device Manager tool window (phone icon on the top right toolbar or from Tools → Device Manager).
+If you don't have an emulator already, click Create Device (e.g. Pixel 7 / Pixel 8 with Android 13, 14, or 15).
+Click the Play (▶) button next to the device to launch the emulator.
+Option B: Physical Android Device
+Enable Developer Options and USB Debugging on your phone.
+Connect your phone via USB cable and allow USB debugging when prompted on screen.
+Your phone's name will appear in the device selector dropdown in Android Studio.
+Step 5: Run the Project & Get the Output
+In the top toolbar, ensure the Run Configuration dropdown is set to app and your target device/emulator is selected.
+Click the green Run (▶) button (or press Shift + F10).
+Android Studio will compile the app (assembleDebug), install the APK, and launch the activity on your emulator/device screen.
+The interactive UI will appear immediately on the emulator/phone:
+01_HelloWorld: Displays the "Hello World" screen.
+02_UserLogin: Enter username admin and password admin123. Click Submit or Reset.
+03_Calculator: Enter numbers, click +, -, *, /, %, or ^ to see results.
+04_CurrentLocation: Click the ... menu on the emulator toolbar → Location → set any latitude/longitude, and click Set Location; grant permission when prompted in the app.
+05_UserRegistrationLogin: Register a new user, switch to Login, and sign in.
+06_BMICalculator: Enter weight in kg (e.g. 70) and height in meters (e.g. 1.75), click Calculate BMI to view the formatted BMI and color-coded category.
+07_ExpenseManager: Add expenses with category and amount; view total and breakdown list.
+08_KmToMiles: Enter distance in kilometers and tap convert to get miles.
+09_StudentDatabaseCloud: Add and view student records (offline SQLite or cloud Firebase).
+10_TodoManager: Add tasks via dialog, tap to mark completed/delete.
+Step 6: Viewing Logs & Debug Output (Optional)
+To view system logs, print statements, or exceptions, open the Logcat tab at the bottom toolbar of Android Studio. Filter by package:mine to see output specific to your experiment.
+
+Here is a quick-reference guide for running, testing, and capturing the output of each of the 10 experiments, including the exact inputs to test and expected outputs to document for your lab record:
+
+Quick Reference: Expected Inputs & Outputs for Every Experiment
+Exp #	Project Name	Test Input	Expected Result / Output Screen
+01	01_HelloWorld	None (opens automatically)	Displays text centered: Hello World!
+02	02_UserLogin	Username: admin
+Password: admin123	Shows Login Successful!. If wrong, decrements remaining attempts (e.g. Attempts Remaining: 2). Reset clears inputs.
+03	03_Calculator	Number 1: 15
+Number 2: 4	+ → 19
+- → 11
+* → 60
+/ → 3.75
+% → 3
+^ → 50625
+(Safely blocks division by 0 with alert message)
+04	04_CurrentLocation	In Emulator: Extended Controls (...) → Location → Set 11.0168, 76.9558	Displays coordinates: Latitude: 11.0168, Longitude: 76.9558
+05	05_UserRegistrationLogin	Register: Username student1, Password pass123
+Login: Enter same credentials	Toast Registration Successful → Navigate to Login screen → Toast Login Successful! Welcome, student1
+06	06_BMICalculator	Weight: 70
+Height: 1.75	Result: Your BMI: 22.86
+Category: Normal weight (in Green)
+07	07_ExpenseManager	Title: Books, Amount: 500, Category: Education	Added to SQLite list; running total updates at the top
+08	08_KmToMiles	Kilometers: 100	Output: 62.14 Miles (formula: 
+1
+ km
+≈
+0.621371
+ miles
+1 km≈0.621371 miles)
+09	09_StudentDatabaseCloud	Roll No: 101, Name: Arun, Dept: CSE	Adds student record to the list; records display in a ListView / RecyclerView
+10	10_TodoManager	Click + Add Task → Enter Submit Lab Report	Task appears in the list; tap or click to mark complete / remove
+How to Take Screenshots for Your Lab Record
+
+When running the apps on the Android Studio Emulator:
+
+Look at the Emulator toolbar on the right side of the phone window.
+Click the Camera icon (📸 Take Screenshot).
+A preview dialog will open showing the exact screenshot with proper resolution.
+Click Save to save the PNG file directly to your computer.
+Troubleshooting Common First-Run Questions
+"Gradle sync failed: Unable to find method..." or "Unsupported Java version":
+Solution: Go to File → Settings (Windows) or Settings (macOS) → Build, Execution, Deployment → Build Tools → Gradle.
+Under Gradle JDK, choose Embedded JDK or version 17.
+"SDK location not found":
+Android Studio will automatically write your local path to local.properties during the first sync on the new computer.
+"Permission denied" on location (Exp 04):
+Click Allow while using the app when the permission prompt dialog appears on the screen.
+
+All 10 project directories are self-contained and ready to open immediately in Android Studio!
+
+Everything is 100% complete, verified, and ready.
+
+
+https://github.com/riteshpowerbias-gif/mad
